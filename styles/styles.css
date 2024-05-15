@@ -1,0 +1,218 @@
+*{
+ margin: 0;
+ padding: 0;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+    --primary-color: rgb(192, 223, 174);
+    --secondary-color: gray;
+}
+
+.icono-fijo {
+  width: 50px;
+  height: 50px; 
+  background-image: url('../assets/vecteezy_whatsapp-png-icon_16716468.png'); 
+  background-size: cover; 
+  position: fixed; 
+  bottom: 20px; 
+  right: 20px;
+  z-index: 999; 
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;   
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: black; 
+}
+
+header nav ul li a:hover {
+    color: var(--secondary-color)
+}
+
+.banner {
+    width: 100%;
+    display: flex;
+  }
+  
+  .bannerIzq {
+    width: 100%;
+    background-color: rgb(192, 223, 174);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bannerIzq p {
+    font-size: 20px;
+  }
+  .bannerDer {
+    width: 100%;
+    background-color: var(--primary-color);
+    background-image: url(../assets/logo_awash-removebg-preview.png);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .bannerIzq h1 {
+    color: black;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+#banner h1 {
+  font-size: 40px;
+}
+
+#banner p {
+    width: 90%;
+    font-size: 100%;
+    color: white; 
+}
+
+#projects,
+#beer {
+    text-align: center;
+    justify-self: center;
+}
+
+#projects h2,
+#beer h2,
+#contact h2 {
+  font-size: 30px;
+}
+
+#projects .container-grid-projects,
+#beer .container-grid-beer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 20px;
+}
+
+#projects .card,
+#beer .card {
+  background-color: rgb(192, 223, 174);
+  padding: 40px;
+  border: 1px solid rgb(230, 230, 230);
+  box-shadow: 6px 5px 45px -15px rgba(155, 150, 150, 0.75);
+  border-radius: 10px;
+  transition: 0.3s transform;
+}
+
+#projects .card:hover 
+{
+  transform: scale(1.03);
+}
+
+#beer .card:hover 
+{
+  transform: scale(1.05);
+}
+
+#projects .card a,
+#beer .card a,
+#contact button {
+  text-decoration: none;
+  border: 1px solid rgb(209, 207, 202);
+  padding: 5px 10px;
+  display: block;
+  width: 50%;
+  margin: 10px auto;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+#beer .card 
+  img
+    {width: 150px;
+    height: 150px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* Contacto */
+#contact h2 {
+  text-align: center;
+}
+
+form {
+  width: 70%;
+  padding: 30px;
+  margin: auto;
+}
+
+form * {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  border: none;
+  outline: none;
+}
+
+form input,
+textarea {
+  border: 1px solid gray;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.skewed {
+  background: rgb(192, 223, 174);
+  position: relative;
+  padding: 20px 5px 50px 5px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+.skewed:before {
+  content: '';
+  background: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: skewY(3deg);
+  transform-origin: top right;
+}
+
+footer {
+  padding: 30px;
+  background-color: white;
+  color: black;
+  text-align: left;
+  cursor: pointer;
+}
+
+@media (max-width: 880px) {
+  #beer .container-grid-beer,
+  #projects .container-grid-projects {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  #beer .container-grid-beer,
+  #projects .container-grid-projects {
+    grid-template-columns: 1fr;
+  }
+}
